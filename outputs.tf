@@ -1,3 +1,7 @@
+output "spring_cloud_api_portals_id" {
+  description = "Map of id values across all spring_cloud_api_portals, keyed the same as var.spring_cloud_api_portals"
+  value       = { for k, v in azurerm_spring_cloud_api_portal.spring_cloud_api_portals : k => v.id }
+}
 output "spring_cloud_api_portals_api_try_out_enabled" {
   description = "Map of api_try_out_enabled values across all spring_cloud_api_portals, keyed the same as var.spring_cloud_api_portals"
   value       = { for k, v in azurerm_spring_cloud_api_portal.spring_cloud_api_portals : k => v.api_try_out_enabled }
