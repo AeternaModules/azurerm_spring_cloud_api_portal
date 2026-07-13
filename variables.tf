@@ -23,7 +23,7 @@ EOT
     api_try_out_enabled           = optional(bool)
     gateway_ids                   = optional(set(string))
     https_only_enabled            = optional(bool)
-    instance_count                = optional(number) # Default: 1
+    instance_count                = optional(number)
     public_network_access_enabled = optional(bool)
     sso = optional(object({
       client_id     = optional(string)
