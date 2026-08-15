@@ -32,7 +32,7 @@ output "spring_cloud_api_portals_spring_cloud_service_id" {
 }
 output "spring_cloud_api_portals_sso" {
   description = "Map of sso values across all spring_cloud_api_portals, keyed the same as var.spring_cloud_api_portals"
-  value       = { for k, v in azurerm_spring_cloud_api_portal.spring_cloud_api_portals : k => v.sso if v.sso != null && length(v.sso) > 0 }
+  value       = { for k, v in azurerm_spring_cloud_api_portal.spring_cloud_api_portals : k => one(v.sso) if v.sso != null && length(v.sso) > 0 }
 }
 output "spring_cloud_api_portals_url" {
   description = "Map of url values across all spring_cloud_api_portals, keyed the same as var.spring_cloud_api_portals"
